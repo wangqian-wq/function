@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    //Object.create(对象. null) 创建对象
+    var test = {
+        num: 2
+    }
+    function Obj(){}
+    Obj.prototype.num = 1;
+    var obj1 = Object.create(Obj.prototype);
+    var obj2 = new Obj();
+    //实例化obj2
+    //调用构造函数Obj的初始化属性的方法
+    //指定实例对象的原型
+    var obj3 = Object.create(test);
+    console.log(obj1);
+    console.log(obj2);
+    console.log(obj3);
+    
+    //创建obj1空对象
+    var obj4 = Object.create(null);
+    console.log(obj4);
+    obj4.num =1;
+    var obj5 = Object.create(obj4);
+    console.log(obj5);
+    console.log(obj5.num);
+
+    var obj = Object.create(null);
+    obj.num = 1;
+    console.log( Object.prototype);
+    //不是所有的对象都继承于Object.prototype。
+    var obj6 = {
+        count: 2
+    }
+    obj.__proto__ = obj6;
+    console.log(obj);
+    console.log(obj.count);  
+    //undefined null toString();
+    //console.log(undefined.toString());
+    var num = 1;
+    num.toString();
+    console.log(num);
+    var num2 = new Number(num);
+    console.log(num2);
+    </script>
+</body>
+</html>

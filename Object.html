@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var num = 1;
+        var obj = {};
+        var obj2 = Object.create(null);
+        document.write(num);
+        document.write(obj);
+        //document.write(obj2);
+        //console.log(obj);
+        obj2.toString = function(){
+            return '你好';
+        }
+        document.write(obj.toString());
+        console.log(Object.prototype);
+        console.log(Number.prototype);
+        
+        Object.prototype.toString.call(1);
+        Object.prototype.toString.call('a');
+        Object.prototype.toString.call(true);
+        Object.prototype.toString.call([1,2,3,4]);
+        Object.prototype.toString.call({name: 1});
+
+    </script>
+</body>
+</html>
